@@ -1,0 +1,8 @@
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task3_3\bin\Debug\Task3_3.exe.config
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task3_3\bin\Debug\Task3_3.exe
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task3_3\bin\Debug\Task3_3.pdb
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task3_3\obj\Debug\Task3_3.exe
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task3_3\obj\Debug\Task3_3.pdb
+D:\AltexSoftTasks\FirstWeekSolutions\Task3_3\bin\Debug\Task3_3.exe.config
+D:\AltexSoftTasks\FirstWeekSolutions\Task3_3\obj\Debug\Task3_3.exe
+D:\AltexSoftTasks\FirstWeekSolutions\Task3_3\obj\Debug\Task3_3.pdb

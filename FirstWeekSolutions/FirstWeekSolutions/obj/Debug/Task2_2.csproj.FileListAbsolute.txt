@@ -1,0 +1,5 @@
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\FirstWeekSolutions\bin\Debug\FirstWeekSolutions.exe.config
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\FirstWeekSolutions\bin\Debug\FirstWeekSolutions.exe
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\FirstWeekSolutions\bin\Debug\FirstWeekSolutions.pdb
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\FirstWeekSolutions\obj\Debug\FirstWeekSolutions.exe
+E:\AltexSoft Course\Новая папка\FirstWeekSolutions\FirstWeekSolutions\obj\Debug\FirstWeekSolutions.pdb
