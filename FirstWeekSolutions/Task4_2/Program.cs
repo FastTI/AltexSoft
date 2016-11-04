@@ -16,41 +16,57 @@ namespace Task4_2
     {
         static void Main(string[] args)
         {
-           string fileOfStudents = "Students.txt";//файл в папке Debug
-           var listOfStudents = ListOfStudentsFromFile(fileOfStudents);
+            var listOfStudents = ListOfStudentsFromFile();
+            var listSuccesfulSt = new List<Students>();//для создания списка студентов сдавших сессию
+            int count = 0;//счетчик зачетов
 
-
-            int count = 0;
-            listOfStudents.Sort(new Students());
-            Console.WriteLine("Экзамен сдали: \n");
             foreach (var list in listOfStudents)
             {
-                for (int i = 0; i < list.Ratings.Length; i++)
+                foreach (var r in list.Ratings)
                 {
-                    if (list.Ratings[i] == "зачет")
-                    {
+                    if (r.Value == "зачет")
                         count++;
-                    }
                 }
+                if (count == list.Ratings.Values.Count)
+                    listSuccesfulSt.Add(list);
 
-                if (count == 3)
-                    Console.WriteLine("{0}\n№ группы: {1}",list.FSP,list.GroupNum);
-                
                 count = 0;
+            }
+
+            listSuccesfulSt.Sort(new Students());
+            Console.WriteLine("Экзамен сдали: \n");
+            foreach (var st in listSuccesfulSt)
+            {
+                Console.WriteLine("\n{0}  № группы:{1}\nРезультаты:", st.FSP, st.GroupNum);
+                foreach (var rating in st.Ratings)
+                {
+                    Console.WriteLine(new string(' ', 10) + "{0}: {1}", rating.Key, rating.Value);
+                }
             }
 
         }
 
         //Список студентов из файла
-        static List<Students> ListOfStudentsFromFile(string fileStudents)
+        static List<Students> ListOfStudentsFromFile()
         {
+            string fileOfStudents = "Students.txt";
             List<Students> listSt = new List<Students>();
-            using (StreamReader stream = new StreamReader(fileStudents, Encoding.Default))
+            using (StreamReader stream = new StreamReader(fileOfStudents, Encoding.Default))
             {
                 while (!stream.EndOfStream)
                 {
                     string[] lines = stream.ReadLine().Split(';');
-                    listSt.Add(new Students() { FSP = lines[0], GroupNum = Convert.ToInt32(lines[1]), Ratings = new string[] { lines[2], lines[3], lines[4] } });
+                    listSt.Add(new Students()
+                    {
+                        FSP = lines[0],
+                        GroupNum = Convert.ToInt32(lines[1]),
+                        Ratings = new Dictionary<string, string>()
+                        {
+                            {lines[2],lines[3]},
+                            {lines[4],lines[5]},
+                            {lines[6],lines[7]}
+                        }
+                    });
                 }
 
             }
