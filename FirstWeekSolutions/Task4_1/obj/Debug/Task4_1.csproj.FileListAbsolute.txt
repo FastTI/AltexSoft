@@ -6,3 +6,9 @@ E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task4_1\obj\Debug\T
 D:\AltexSoftTasks\FirstWeekSolutions\Task4_1\bin\Debug\Task4_1.exe.config
 D:\AltexSoftTasks\FirstWeekSolutions\Task4_1\obj\Debug\Task4_1.exe
 D:\AltexSoftTasks\FirstWeekSolutions\Task4_1\obj\Debug\Task4_1.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_1\bin\Debug\Task4_1.exe.config
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_1\obj\Debug\Task4_1.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_1\obj\Debug\Task4_1.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_1\bin\Debug\Task4_1.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_1\bin\Debug\Task4_1.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_1\obj\Debug\Task4_1.csprojResolveAssemblyReference.cache

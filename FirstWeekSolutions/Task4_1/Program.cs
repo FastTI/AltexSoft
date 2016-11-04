@@ -54,7 +54,7 @@ namespace Task4_1
             try
             {
                 Console.Write("\nШкола № ");
-                int schoolNumber = Convert.ToInt16(Console.ReadLine());
+                uint schoolNumber = Convert.ToUInt16(Console.ReadLine());
 
                 //Сортируем список студентов
                 listOfStudents.Sort(new Students());

@@ -1,0 +1,6 @@
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_4\bin\Debug\Task4_4.exe.config
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_4\bin\Debug\Task4_4.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_4\bin\Debug\Task4_4.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_4\obj\Debug\Task4_4.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_4\obj\Debug\Task4_4.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task4_4\obj\Debug\Task4_4.csprojResolveAssemblyReference.cache
