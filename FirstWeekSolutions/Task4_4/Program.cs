@@ -21,37 +21,38 @@ namespace Task4_4
             
             do
             {
-                try
-                {
                     Console.WriteLine("Введите год выпуска авто");
                     string yearOfCar = Console.ReadLine();
-                    if (Regex.IsMatch(yearOfCar, pattern) & Convert.ToInt16(yearOfCar) <= DateTime.Now.Year)
+                    if (Regex.IsMatch(yearOfCar, pattern))
                     {
-                        var listEarlyCar = new List<SheetOfCar>();
-                        foreach (var car in listOfCar)
+                        if (Convert.ToInt16(yearOfCar) < DateTime.Now.Year)
                         {
-                            if (car.YearOfBuy < Convert.ToInt16(yearOfCar))
-                                listEarlyCar.Add(car);
-                        }
-                        if (listEarlyCar.Count > 0)
-                        {
-                            Console.WriteLine("Список автомобилей выпущеных раньше {0} года\n", yearOfCar);
-                           PrintResultList(listEarlyCar);
+                            var listEarlyCar = new List<SheetOfCar>();
+                            foreach (var car in listOfCar)
+                            {
+                                if (car.YearOfBuy < Convert.ToInt16(yearOfCar))
+                                    listEarlyCar.Add(car);
+
+                            }
+                                if (listEarlyCar.Count > 0)
+                                {
+                                    Console.WriteLine("Список автомобилей выпущеных раньше {0} года\n", yearOfCar);
+                                    PrintResultList(listEarlyCar);
+                                }
+                                else
+                                    Console.WriteLine("В списке нет машин выпущеных раньше {0} года", yearOfCar);
                         }
                         else
-                            Console.WriteLine("В списке нет машин выпущеных раньше {0} года", yearOfCar);
+                        {
+                            Console.WriteLine("Год покупки авто не может превышать текущий");
+                        }   
                     }
                     else
                     {
                         Console.WriteLine(
-                            "Введите верный формат года.\n 1.Четыре цыфры 2.Год не может превышать текущий");
+                            "Введите верный формат года. Четыре цифры");
                     }
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Введите верный формат года.\n 1.Четыре цыфры 2.Год не может превышать текущий");
-                }
-
+                
             } while (EscPress());
 
         }
