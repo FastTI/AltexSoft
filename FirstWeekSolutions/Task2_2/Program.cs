@@ -83,7 +83,6 @@ namespace Task2_2
 
             foreach (var arr in arrStudents)
             {
-                //Console.WriteLine("Student  {0}  {1}  \nFaculty: {2} \nAge: {3}\n", arr.FirstName, arr.LastName, arr.Faculty, arr.Age);
                 Console.WriteLine( arr.ToString());
         
             }
