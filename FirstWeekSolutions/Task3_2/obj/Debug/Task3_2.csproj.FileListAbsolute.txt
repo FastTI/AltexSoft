@@ -8,3 +8,8 @@ D:\AltexSoftTasks\FirstWeekSolutions\Task3_2\obj\Debug\Task3_2.exe
 D:\AltexSoftTasks\FirstWeekSolutions\Task3_2\obj\Debug\Task3_2.pdb
 D:\AltexSoftTasks\FirstWeekSolutions\Task3_2\bin\Debug\Task3_2.exe
 D:\AltexSoftTasks\FirstWeekSolutions\Task3_2\bin\Debug\Task3_2.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task3_2\bin\Debug\Task3_2.exe.config
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task3_2\obj\Debug\Task3_2.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task3_2\obj\Debug\Task3_2.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task3_2\bin\Debug\Task3_2.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task3_2\bin\Debug\Task3_2.pdb

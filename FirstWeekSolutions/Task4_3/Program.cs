@@ -21,16 +21,18 @@ namespace Task4_3
 
             do
             {
-                var listOfOverBaggage = new List<BaggageList>();//список пассажиров с перевесом
-                Console.WriteLine("Введите максимально допустимый вес:");
+                var listOfOverBaggage = new List<BaggageList>();//list of passangers with overweight
+                Console.WriteLine("Enter max weight:");
                 
                     string input = Console.ReadLine();
+                    //Check to correct weight
                     while (!float.TryParse(input, out maxWeight) || float.Parse(input) <= 0)
                     {
-                        Console.WriteLine("Введите корректый вес");
+                        Console.WriteLine("Enter correct weight");
                         input = Console.ReadLine();
                     }
-
+                    
+                    //Check hwo overweight and writing to list
                     foreach (var baggage in listOfBagage)
                     {
                         if (baggage.ThingsWeight/baggage.NumOfThings > maxWeight)
@@ -39,19 +41,19 @@ namespace Task4_3
                      
                     if (listOfOverBaggage.Count>0)
                     {
-                        Console.WriteLine("Обнаружен перегруз: \n");
+                        Console.WriteLine("\nOverweight passengers: \n");
                         listOfOverBaggage.Sort(new BaggageList());
                         foreach (var bag in listOfOverBaggage)
                         {
-                            Console.WriteLine("Имя: {0}\nФамилия: {1}\nОтчество: {2}\nКоличество вещей: {3}\nСредний вес {4:##.00}\n", bag.FirstName, bag.Surname, bag.Patronymic,bag.NumOfThings,bag.ThingsWeight / bag.NumOfThings);
+                            Console.WriteLine(bag.ToString());
                         }
                     }
-                    else Console.WriteLine("Пассажиров с перегрузом не обнаружено");
+                    else Console.WriteLine("Passangers with overweight not found");
  
             } while (EscPress());
         }
 
-        //Багажная ведомость из файла
+        //BaggageList from file
         static List<BaggageList> ListOfBaggageFromFile()
         {
             string fileOfBaggage = "BaggageList.txt";
@@ -76,11 +78,11 @@ namespace Task4_3
             return listBg;
         }
         
-        //Условие завершения цикла
+        //For end of cycle
         static bool EscPress()
         {
             var cki = new ConsoleKeyInfo();
-            Console.WriteLine("\nЗакончить операцию?\nДля продолжения нажмите любую клавишу/Для завершения нажмите Esc");
+            Console.WriteLine("\nFinish operation?\nPress any key to continue/Press Esc to quit");
             cki = Console.ReadKey();
             if (cki.Key == ConsoleKey.Escape)
             {

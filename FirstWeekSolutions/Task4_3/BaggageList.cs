@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task4_3
 {
-    class BaggageList:IComparer<BaggageList>
+    struct BaggageList:IComparer<BaggageList>
     {
         public string FirstName { get; set; }
         public string Surname { get; set; }
@@ -22,6 +22,11 @@ namespace Task4_3
                 return -1;
             else
                 return 0;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Name: {0}\nSurname: {1}\nPatronymic: {2}\nNumber of items: {3}\nAverage weight {4:##.00}\n", FirstName, Surname, Patronymic, NumOfThings, ThingsWeight / NumOfThings);
         }
     }
 }

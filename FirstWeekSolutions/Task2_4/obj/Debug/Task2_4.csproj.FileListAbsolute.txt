@@ -6,3 +6,8 @@ E:\AltexSoft Course\Новая папка\FirstWeekSolutions\Task2_4\obj\Debug\T
 D:\AltexSoftTasks\FirstWeekSolutions\Task2_4\bin\Debug\Task2_4.exe.config
 D:\AltexSoftTasks\FirstWeekSolutions\Task2_4\obj\Debug\Task2_4.exe
 D:\AltexSoftTasks\FirstWeekSolutions\Task2_4\obj\Debug\Task2_4.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task2_4\bin\Debug\Task2_4.exe.config
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task2_4\obj\Debug\Task2_4.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task2_4\obj\Debug\Task2_4.pdb
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task2_4\bin\Debug\Task2_4.exe
+E:\AltexSoft Course\AltexSoft\FirstWeekSolutions\Task2_4\bin\Debug\Task2_4.pdb

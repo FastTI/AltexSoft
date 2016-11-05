@@ -17,15 +17,15 @@ namespace Task4_4
         static void Main(string[] args)
         {
             List<SheetOfCar> listOfCar = ListOfCarFromFile();
-            const string pattern = "[0-9]{4}"; //ограничения на вводимые символы
+            const string pattern = "[0-9]{4}"; //pattern for 4 numbers enter
             
             do
             {
-                    Console.WriteLine("Введите год выпуска авто");
+                    Console.WriteLine("Enter Year of Car production");
                     string yearOfCar = Console.ReadLine();
                     if (Regex.IsMatch(yearOfCar, pattern))
                     {
-                        if (Convert.ToInt16(yearOfCar) < DateTime.Now.Year)
+                        if (Convert.ToInt16(yearOfCar) <= DateTime.Now.Year)
                         {
                             var listEarlyCar = new List<SheetOfCar>();
                             foreach (var car in listOfCar)
@@ -36,27 +36,29 @@ namespace Task4_4
                             }
                                 if (listEarlyCar.Count > 0)
                                 {
-                                    Console.WriteLine("Список автомобилей выпущеных раньше {0} года\n", yearOfCar);
-                                    PrintResultList(listEarlyCar);
+                                    Console.WriteLine("List of car issued previously {0} year\n", yearOfCar);
+                                   listEarlyCar.Sort(new ComparerSheetOfCar());
+                                    foreach (var sheetOfCar in listEarlyCar)
+                                    {
+                                        Console.WriteLine(sheetOfCar.ToString());
+                                    }
+
                                 }
                                 else
-                                    Console.WriteLine("В списке нет машин выпущеных раньше {0} года", yearOfCar);
+                                    Console.WriteLine("In list no one car issued previously {0} year", yearOfCar);
                         }
                         else
-                        {
-                            Console.WriteLine("Год покупки авто не может превышать текущий");
-                        }   
+                            Console.WriteLine("Year of by car can not exceed current year");
                     }
                     else
-                    {
-                        Console.WriteLine(
-                            "Введите верный формат года. Четыре цифры");
-                    }
+                        Console.WriteLine("Enter correct format of year");
+                    
                 
             } while (EscPress());
 
         }
 
+        //List of car from file
         static List<SheetOfCar> ListOfCarFromFile()
         {
             string fileOfCar = "CarList.txt";
@@ -80,11 +82,11 @@ namespace Task4_4
             }
             return listBg;
         }
-
+        //For end of cycle
         static bool EscPress()
         {
             var cki = new ConsoleKeyInfo();
-            Console.WriteLine("\nЗакончить операцию?\nДля продолжения нажмите любую клавишу/Для завершения нажмите Esc");
+            Console.WriteLine("\nFinish operation?\nPress any key to continue/Press Esc to quit");
             cki = Console.ReadKey();
             if (cki.Key == ConsoleKey.Escape)
             {
@@ -97,17 +99,5 @@ namespace Task4_4
             return true;
         }
 
-        static void PrintResultList(List<SheetOfCar> list )
-        {
-            list.Sort(new ComparerSheetOfCar());
-          
-            foreach (var earlyCar in list)
-            {
-                Console.WriteLine(
-                    "Модель авто: {0}\nНомерной знак: {1}\nФамилия владельца: {2}\nГод покупки: {3}\nПробег: {4} км\n"
-                    , earlyCar.Model, earlyCar.NumOfCar, earlyCar.Surname, earlyCar.YearOfBuy,
-                    earlyCar.Mileage);
-            }
-        }
     }
 }

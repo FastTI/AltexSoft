@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task4_1
 {
-    class Students : IComparer<Students>
+    struct Students : IComparer<Students>
     {
         public string FSP { get; set; } //FirstNameSurnamePatronymic
         public DateTime BirthDay { get; set; }

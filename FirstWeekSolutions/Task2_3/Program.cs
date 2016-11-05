@@ -14,18 +14,18 @@ namespace Task2_3
         {
             var arrNumbs = new int[100];
 
-            //Массив заполняется случайными элементами в указанном диапазоне
+            //Array fill random elements
             RandomNumbers(arrNumbs, -500, 500);
 
-            Console.WriteLine("Не сортированный массив чисел в диапазоне от -500 до 500\n");
+            Console.WriteLine("Not sorted array\n");
             foreach (var elem in arrNumbs)
             {
                 Console.Write(elem + " ");
             }
-            //Сортировка массива
+            //Sorting array
             SimpleSort(arrNumbs);
 
-            Console.WriteLine("\n\nСортированный массив чисел в диапазоне от -500 до 500\n");
+            Console.WriteLine("\n\nSorted array\n");
             foreach (var i in arrNumbs)
             {
                 Console.Write(i + " ");

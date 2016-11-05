@@ -17,8 +17,8 @@ namespace Task4_2
         static void Main(string[] args)
         {
             var listOfStudents = ListOfStudentsFromFile();
-            var listSuccesfulSt = new List<Students>();//для создания списка студентов сдавших сессию
-            int count = 0;//счетчик зачетов
+            var listSuccesfulSt = new List<Students>();//For succesfully students
+            int count = 0;//Counter Done 
 
             foreach (var list in listOfStudents)
             {
@@ -34,10 +34,10 @@ namespace Task4_2
             }
 
             listSuccesfulSt.Sort(new Students());
-            Console.WriteLine("Экзамен сдали: \n");
+            Console.WriteLine("Exam passed: \n");
             foreach (var st in listSuccesfulSt)
             {
-                Console.WriteLine("\n{0}  № группы:{1}\nРезультаты:", st.FSP, st.GroupNum);
+                Console.WriteLine("\n{0}  № Of Group:{1}\nResults:", st.FSP, st.GroupNum);
                 foreach (var rating in st.Ratings)
                 {
                     Console.WriteLine(new string(' ', 10) + "{0}: {1}", rating.Key, rating.Value);
@@ -46,10 +46,11 @@ namespace Task4_2
 
         }
 
-        //Список студентов из файла
+        //Students from file
         static List<Students> ListOfStudentsFromFile()
         {
             string fileOfStudents = "Students.txt";
+            
             List<Students> listSt = new List<Students>();
             using (StreamReader stream = new StreamReader(fileOfStudents, Encoding.Default))
             {

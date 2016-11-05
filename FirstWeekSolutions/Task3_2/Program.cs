@@ -14,39 +14,45 @@ namespace Task3_2
         static void Main(string[] args)
         {
             string fileName = "Test.dat";
-            string[] arr;  //массив для хранения данных из файла
+            string[] arrNumsFromFile;  //array for data from file
 
-            WriteIntNumToFile(fileName, 10, 1, 10);
 
-            //считываем данные в массив
-            using (var readFile = new StreamReader(fileName))
+            if (File.Exists(fileName) && File.ReadAllLines(fileName).Length > 0)
             {
-                arr = readFile.ReadToEnd().Split(' ');
-            }
+                WriteIntNumToFile(fileName, 10, 1, 10);
 
-            Console.WriteLine("Числа записанные в файле");
-            foreach (var s in arr)
-            {
-                Console.Write(s + " ");
-            }
-            Console.WriteLine();
-
-
-            Console.WriteLine("Модифицированный файл с возведенными в квадрат элементами");
-            using (StreamWriter fileStream = new StreamWriter(fileName, false))
-            {
-                foreach (var vr in arr)
+                //Reading data from file
+                using (var readFile = new StreamReader(fileName))
                 {
-                    if (vr != "")
+                    arrNumsFromFile = readFile.ReadToEnd().Split(' ');
+                }
+
+                Console.WriteLine("Numbers wrote to file");
+                foreach (var s in arrNumsFromFile)
+                {
+                    Console.Write(s + " ");
+                }
+                Console.WriteLine();
+
+
+                Console.WriteLine("Modified file with squaring elements");
+                using (StreamWriter fileStream = new StreamWriter(fileName, false))
+                {
+                    foreach (var vr in arrNumsFromFile)
                     {
-                        fileStream.Write(Convert.ToInt32(vr) * Convert.ToInt32(vr) + " ");
-                        Console.Write(Convert.ToInt32(vr) * Convert.ToInt32(vr) + " ");
+                        if (vr != "")
+                        {
+                            fileStream.Write(Convert.ToInt32(vr) * Convert.ToInt32(vr) + " ");
+                            Console.Write(Convert.ToInt32(vr) * Convert.ToInt32(vr) + " ");
+                        }
                     }
                 }
             }
+            else
+                Console.WriteLine("File \'{0}\' not found or it's empty\nCheck the path to the file or its contents", fileName);
         }
 
-        //запись в файл целых чисел в указанном диапазоне и количестве
+        //Write Random int numbers to file
         static void WriteIntNumToFile(string path, int countOfNum, int from, int to)
         {
             Random rand = new Random();

@@ -12,27 +12,35 @@ namespace Task3_3
     {
         private static void Main(string[] args)
         {
-            string path = @"E:\AltexSoft Course\Courses-5wave";
+            string path = @"TestFolder\";
+            
             DirectoryInfo dir = new DirectoryInfo(path);
 
-            Console.WriteLine("Список папок и файлов по пути " + dir.FullName);
-            Console.WriteLine();
+            if (dir.Exists)
+            {
+                Console.WriteLine("List of folders and files by path " + dir.FullName);
+                Console.WriteLine();
 
-            GetDirFtFiles(dir);
+                GetDirFtFiles(dir);    
+            }
+            else
+                Console.WriteLine("Directory not found");
+         
+            
         }
 
-        //Рекурсивный поиск подпапок и файлов указанной директории
+        //Recursive search subfolders and files by path
         private static void GetDirFtFiles(DirectoryInfo dir)
         {
-            DirectoryInfo[] searchDirectory = dir.GetDirectories();
-            try
-            {
 
+            
+                DirectoryInfo[] searchDirectory = dir.GetDirectories();
+            
                 foreach (var d in searchDirectory)
                 {
-                    Console.WriteLine("Папка: " + d.Name);
+                    Console.WriteLine("Folder: " + d.Name);
                     FileInfo[] searchFiles = d.GetFiles();
-                    Console.WriteLine("\nФайлы внутри папки:");
+                    Console.WriteLine("\nFailes inside folder:");
                     if (searchFiles.Length > 0)
                     {
                         foreach (var f in searchFiles)
@@ -41,17 +49,14 @@ namespace Task3_3
                         }
                     }
                     else
-                        Console.WriteLine(new string(' ', 20) + "В этой папке нет файлов");
+                        Console.WriteLine(new string(' ', 20) + "In this folder no files");
 
                     Console.WriteLine(new string('-', 50));
                     //Рекурсивный вызов
                     GetDirFtFiles(d);
                 }
-            }
-            catch (Exception exp)
-            {
-                Console.WriteLine(exp.Message);
-            }
+            
+            
         }
     }
 }

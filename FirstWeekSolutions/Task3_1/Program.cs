@@ -16,37 +16,42 @@ namespace Task3_1
     {
         static void Main(string[] args)
         {
-            string path = "DoubleNumbers.txt";  //путь к файлу в папке Debug
-            string pattern = "-?[0-9]+,[0-9]+"; //паттерн для вещественных чисел
-            char[] charForBreakdown = new char[] { ' ', '\n', '\r', '\t' }; //список символов-разделителей
-            double sumOfDouble = 0; //сумма вещественных чисел
+            string path = "DoubleNumbers.txt";  //path to file in Debug folder
+            string pattern = "-?[0-9]+,[0-9]+"; //pattern for check for double
+            char[] charForBreakdown = new char[] { ' ', '\n', '\r', '\t' }; //list of separators
+            double sumOfDouble = 0; //sum of double num
 
-
-            using (StreamReader fileToRead = new StreamReader(path))
+            if (File.Exists(path) && File.ReadAllLines(path).Length > 0)
             {
-                string[] fileR = fileToRead.ReadToEnd().Split(charForBreakdown);
-                Console.WriteLine("Считанный файл");
-                foreach (var ch in fileR)
+                using (StreamReader fileToRead = new StreamReader(path))
                 {
-                    Console.Write(ch);
-                }
-
-                Console.WriteLine("\n\nВещественные числа из файла:");
-
-                foreach (var b in fileR)
-                {
-                    if (b != "")
+                    string[] fileR = fileToRead.ReadToEnd().Split(charForBreakdown);
+                    Console.WriteLine("Read file");
+                    foreach (var ch in fileR)
                     {
-                        if (Regex.IsMatch(b, pattern))
+                        Console.Write(ch+" ");
+                    }
+
+                    Console.WriteLine("\n\nDouble numbers from file:");
+
+                    foreach (var b in fileR)
+                    {
+                        if (b != "")
                         {
-                            Console.Write(b + "  ");
-                            sumOfDouble += Convert.ToDouble(b);
+                            if (Regex.IsMatch(b, pattern))
+                            {
+                                Console.Write(b + "  ");
+                                sumOfDouble += Convert.ToDouble(b);
+                            }
                         }
                     }
                 }
-            }
 
-            Console.WriteLine("\n\nСумма этих чисел\n" + sumOfDouble);
+                Console.WriteLine("\n\nSum of this numbers\n" + sumOfDouble);         
+            }
+            else
+                Console.WriteLine("File \'{0}\' not found or it's empty\nCheck the path to the file or its contents", path);
+            
         }
     }
 }

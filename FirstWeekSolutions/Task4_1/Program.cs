@@ -22,9 +22,9 @@ namespace Task4_1
                 new Students(){FSP = "Сергей Сергеев Сергеевич",BirthDay = new DateTime(2000,12,6),Adress = "Гагарина 7", NumberOfSchool = 13}
               };
 
-            Console.Write("В данный момент в списке есть информация о выпускниках школ № ");
+            Console.Write("At just moment list has information about school № ");
 
-            //Сюда записывается информация о школах которые есть в списке
+            //List of school
             List<int> numOfSchool = GetNumOfSchool(listOfStudents);
 
             foreach (var i in numOfSchool)
@@ -36,7 +36,7 @@ namespace Task4_1
             Graduates(listOfStudents);
         }
 
-        //Формируется список номеров школ которые есть в списке студентов
+        //Return list numbers of school
         static List<int> GetNumOfSchool(List<Students> students)
         {
             var result = new List<int>();
@@ -48,21 +48,21 @@ namespace Task4_1
             return result;
         }
 
-        //Выводит список выпускников сортированных по году рождения
+        //Print list of graduates sorted by birthday
         static void Graduates(List<Students> listOfStudents)
         {
             try
             {
-                Console.Write("\nШкола № ");
+                Console.Write("\nSchool № ");
                 uint schoolNumber = Convert.ToUInt16(Console.ReadLine());
 
-                //Сортируем список студентов
+                //Sorting list of students
                 listOfStudents.Sort(new Students());
-                int countS = 0;//подсчет выпускников школы
+                int countS = 0;//count graduate of school
 
                 foreach (var list in listOfStudents)
                 {
-                    //Если заданная школа совпадает со школой из списка выводим информацию
+                    //If school equal with school from list print info about student
                     if (list.NumberOfSchool == schoolNumber)
                     {
                         Console.WriteLine("\n{0} \n{1} \n{2} ", list.FSP, list.Adress,
@@ -72,13 +72,13 @@ namespace Task4_1
 
                 }
                 if (countS > 0)
-                    Console.WriteLine("\nВсего студентов окончивших Школу № {0} - {1}", schoolNumber, countS);
+                    Console.WriteLine("\nAll students who ended School № {0} - {1}", schoolNumber, countS);
                 else
-                    Console.WriteLine("В спике нет студентов из этой школы");
+                    Console.WriteLine("In list no one student from this school");
             }
             catch (Exception exp)
             {
-                Console.WriteLine("Ошибка\n          Возможно вы ввели не верный формат школы...");
+                Console.WriteLine("Error\n          Maybe you enter wrong school format");
             }
         }
 

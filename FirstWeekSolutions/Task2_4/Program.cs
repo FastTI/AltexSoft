@@ -14,41 +14,42 @@ namespace Task2_4
         private static void Main(string[] args)
         {
             int[,] arr = new int[5, 5];
-            List<int> ListOfSumCol; // для суммы столбцов
+            List<int> listOfSumCol; // For sum of columns
 
-            //Заполнение двумерного массива случайными числами в у казанном диапазоне   
+            //Fill two-dimensional array  random numbers in range   
             RandomTwoArray(arr, -500, 500);
-            YellowSkin("Рандомная матрица");
+
+            Skin("Random matrix",ConsoleColor.Yellow);
             PrintArray(arr);
 
-            //В список записываетс сумма столбцов
-            ListOfSumCol = SumOfCol(arr);
-            YellowSkin("\nСумма столбцов матрицы");
+            //Write sum of columns to list
+            listOfSumCol = SumOfCol(arr);
+            Skin("\nSum of columns matrix",ConsoleColor.Yellow);
 
-            for (int i = 0; i < ListOfSumCol.Count; i++)
+            for (int i = 0; i < listOfSumCol.Count; i++)
             {
-                Console.Write(i + 1 + "й <" + ListOfSumCol[i] + "> ");
+                Console.Write(i + 1 + "й <" + listOfSumCol[i] + "> ");
             }
 
-            ListOfSumCol.Sort();
-            YellowSkin("\n\nОтсортированные суммы столбцов");
+            listOfSumCol.Sort();
+            Skin("\n\nSorted sum of columns",ConsoleColor.Yellow);
 
-            for (int i = 0; i < ListOfSumCol.Count; i++)
+            for (int i = 0; i < listOfSumCol.Count; i++)
             {
-                Console.Write(i + 1 + "й <" + ListOfSumCol[i] + "> ");
+                Console.Write(i + 1 + "й <" + listOfSumCol[i] + "> ");
             }
 
-            //Сортировка по сумме столбцов
+            //Sorting by sum of columns
             SortBySumOfCol(arr);
-            YellowSkin("\n\nОтсортированный по сумме элементов массив");
+
+            Skin("\n\nSorted array by sum of elements",ConsoleColor.Yellow);
+
             PrintArray(arr);
         }
-        //Заполнить случайными числами
+        //Fill random numbers
         private static int[,] RandomTwoArray(int[,] arr, int from, int to)
         {
-            //int[,] arr = new int[col,row];
-
-            Random rand = new Random();
+           Random rand = new Random();
 
             for (int i = 0; i < arr.GetLength(0); i++)
             {
@@ -60,7 +61,7 @@ namespace Task2_4
             return arr;
         }
 
-        //Вывести суммы столбцов
+        //Print sums of columns
         private static List<int> SumOfCol(int[,] arr)
         {
             List<int> sumOfCol = new List<int>();
@@ -81,18 +82,19 @@ namespace Task2_4
             return sumOfCol;
         }
 
-        private static void YellowSkin(string text)
+        //Method for coloring the text
+        private static void Skin(string text,ConsoleColor color)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = color;
             Console.WriteLine(text);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        //Сортировка по сумме элементов столбца
+        //Sort by sum elements of columns
         private static int[,] SortBySumOfCol(int[,] arr)
         {
-            int sumCurrentCol = 0; //сумма текущего столбца
-            int sumPrevCol = 0; //сумма предыдущего столбца
+            int sumCurrentCol = 0; //sum of current column
+            int sumPrevCol = 0; //sum of previous column
 
             for (int i = 0; i < arr.GetLength(0); i++)
             {
